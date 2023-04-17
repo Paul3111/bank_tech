@@ -32,4 +32,8 @@ RSpec.describe Client do
     client1 = Client.new('paul', 'lazar')
     expect(client1.view_client).to eq 'Paul Lazar'
   end
+
+  it 'Fails if the first name contains letters.' do
+    expect{ Client.new('Paul2', 'Lazar') }.to raise_error 'Names can only contain letters'
+  end
 end
