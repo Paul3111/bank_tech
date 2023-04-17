@@ -12,4 +12,10 @@ RSpec.describe Bank do
     transaction1 = account1.deposit(1, '17/04/2023')
     expect(transaction1).to eq ({'balance'=> 1, 'date'=> '17/04/2023'})
   end
+
+  it 'Deposits 1000 monetary units and returns the deposit balance and date' do
+    account1 = Bank.new
+    transaction1 = account1.deposit(1000, '18/04/2023')
+    expect(transaction1).to eq ({'balance'=> 1000, 'date'=> '18/04/2023'})
+  end
 end
