@@ -26,4 +26,9 @@ RSpec.describe Bank do
     transaction2 = account1.deposit(1000, '18/04/2023')
     expect(transaction2).to eq ({'balance'=> 1050, 'date'=> '18/04/2023'})
   end
+
+  it 'Returns error if depositing a negative value' do
+    account1 = Bank.new
+    expect{ account1.deposit(-1000, '18/04/2023') }.to raise_error 'You cannot deposit negative values.'
+  end
 end
