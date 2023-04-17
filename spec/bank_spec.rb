@@ -68,7 +68,7 @@ RSpec.describe Bank do
     expect { account1.withdraw(101, '19/04/2023') }.to raise_error 'You cannot withdraw an amount greater than the available balance.'
   end
 
-  it 'Returns zero when money withdrawn equal available balance.' do
+  it 'Returns zero when money withdrawn equals available balance.' do
     account1 = Bank.new
     account1.deposit(100, '17/04/2023')
     account1.withdraw(100, '19/04/2023')
