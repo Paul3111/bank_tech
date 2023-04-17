@@ -31,4 +31,9 @@ RSpec.describe Bank do
     account1 = Bank.new
     expect{ account1.deposit(-1000, '18/04/2023') }.to raise_error 'You cannot deposit negative values.'
   end
+
+  it 'Returns error if depositing a zero value' do
+    account1 = Bank.new
+    expect{ account1.deposit(0, '18/04/2023') }.to raise_error 'You cannot deposit negative values.'
+  end
 end
