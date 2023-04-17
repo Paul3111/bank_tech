@@ -53,4 +53,12 @@ RSpec.describe Bank do
     account1.withdraw(100, '19/04/2023')
     expect(account1.balance).to eq 0
   end
+
+  it 'Deposits two amounts and withdraws once then returns updated balance.' do
+    account1 = Bank.new
+    account1.deposit(100, '17/04/2023')
+    account1.deposit(2000, '18/04/2023')
+    account1.withdraw(600, '19/04/2023')
+    expect(account1.balance).to eq 1500
+  end
 end
