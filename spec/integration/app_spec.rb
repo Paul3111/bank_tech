@@ -1,6 +1,6 @@
 require './app'
 
-RSpec.describe Bank do
+RSpec.describe Statement do
   it 'Deposits 1000 monetary unit and returns the transaction history.' do
     statement1 = Statement.new
     expect(statement1.view).to eq 'date || credit || debit || balance\n10/01/2023 || 1000.00 || || 1000.00'
