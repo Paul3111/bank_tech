@@ -17,4 +17,9 @@ RSpec.describe Client do
   it 'Creates a client with empty space as first and last name and returns error.' do
     expect{ Client.new('', '') }.to raise_error 'First and last name are mandatory'
   end
+
+  it 'Creates a client with lowercase first name and returns correct output.' do
+    client1 = Client.new('paul', 'Lazar')
+    expect(client1.view_client).to eq 'Paul Lazar'
+  end
 end
