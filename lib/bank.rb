@@ -12,6 +12,11 @@ class Bank
         return {'balance'=> @balance, 'date'=> date}
     end
 
+    def withdraw(amount, date = Date.today) # Date is optional
+        @balance -= amount
+        return {'balance'=> @balance, 'date'=> date}
+    end
+
     def balance
         return @balance
     end
