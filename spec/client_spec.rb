@@ -22,4 +22,9 @@ RSpec.describe Client do
     client1 = Client.new('paul', 'Lazar')
     expect(client1.view_client).to eq 'Paul Lazar'
   end
+
+  it 'Creates a client with lowercase last name and returns correct output.' do
+    client1 = Client.new('Paul', 'lazar')
+    expect(client1.view_client).to eq 'Paul Lazar'
+  end
 end
