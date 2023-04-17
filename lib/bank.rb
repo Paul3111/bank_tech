@@ -13,6 +13,7 @@ class Bank
     end
 
     def withdraw(amount, date = Date.today) # Date is optional
+        fail 'You cannot withdraw an amount greater than the available balance.' if amount > @balance
         @balance -= amount
         return {'balance'=> @balance, 'date'=> date}
     end
