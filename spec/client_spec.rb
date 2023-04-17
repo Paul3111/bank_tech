@@ -38,6 +38,10 @@ RSpec.describe Client do
   end
 
   it 'Fails if the last name contains letters.' do
-    expect{ Client.new('Paul2', 'Lazar') }.to raise_error 'Names can only contain letters'
+    expect{ Client.new('Paul', 'Lazar3') }.to raise_error 'Names can only contain letters'
+  end
+
+  it 'Fails if the first and last name contain letters.' do
+    expect{ Client.new('Paul2', 'Laza3r') }.to raise_error 'Names can only contain letters'
   end
 end
