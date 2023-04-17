@@ -3,8 +3,9 @@ class Bank
         @balance = 0
     end
 
-    def deposit(amount)
-        return @balance += amount
+    def deposit(amount, date = Date.now)
+        @balance += amount
+        return {'balance'=> @balance, 'date'=> date}
     end
 
     def balance
