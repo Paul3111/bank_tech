@@ -41,4 +41,9 @@ RSpec.describe Bank do
     account1 = Bank.new
     expect{ account1.deposit('aaaaa', '18/04/2023') }.to raise_error 'The deposit amount must not be a string.'
   end
+
+  it 'Returns error if amount deposited is not a number' do
+    account1 = Bank.new
+    expect{ account1.deposit('1', '18/04/2023') }.to raise_error 'The deposit amount must not be a string.'
+  end
 end

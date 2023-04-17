@@ -6,8 +6,8 @@ class Bank
     end
 
     def deposit(amount, date = Date.today) # Date is optional
-        fail 'The deposit amount must not be a string.' if amount.is_a? String
-        fail 'You cannot deposit negative values.' if amount <= 0
+        return fail 'The deposit amount must not be a string.' if amount.is_a? String
+        return fail 'You cannot deposit negative values.' if amount <= 0
         @balance += amount
         return {'balance'=> @balance, 'date'=> date}
     end
