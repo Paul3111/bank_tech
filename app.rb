@@ -14,9 +14,9 @@ class Statement
     return @client = client
   end
 
-  def fetch_balance(balance)
-    return @balance
-  end
+  #def fetch_balance(balance)
+  #  return @balance
+  #end
 
   def view_statement
     transactions_list = []
