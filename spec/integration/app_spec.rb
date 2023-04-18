@@ -67,4 +67,12 @@ RSpec.describe 'Statement integration.' do
     statement1.add_transaction(account1.withdraw(300.30, '21/04/2023'))
     expect(statement1.view_statement).to eq "Paul Lazar\ndate || credit || debit || balance\n17/04/2023 || 200.50 || || 200.50\n19/04/2023 || 400.00 || || 600.50\n21/04/2023 || || 300.30 || 300.20\n"
   end
+
+  it 'Returns error when deposit input is a negative amount.' do
+    client1 = Client.new('Paul', 'Lazar')
+    account1 = Bank.new
+    statement1 = Statement.new
+    statement1.add_client_to_statement(client1)
+    expect { statement1.add_transaction(account1.deposit(-100, '17/04/2023')) }.to raise_error 'You cannot deposit negative values.'
+  end
 end
