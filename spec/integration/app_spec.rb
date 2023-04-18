@@ -45,4 +45,15 @@ RSpec.describe 'Statement integration.' do
     statement1.add_transaction(account1.withdraw(50, '21/04/2023'))
     expect(statement1.view_statement).to eq "Paul Lazar\ndate || credit || debit || balance\n17/04/2023 || 50.00 || || 50.00\n21/04/2023 || || 50.00 || 0.00\n"
   end
+
+  it 'Deposits twice, withdraws 300 monetary units and returns the transaction history.' do
+    client1 = Client.new('Paul', 'Lazar')
+    account1 = Bank.new
+    statement1 = Statement.new
+    statement1.add_client_to_statement(client1)
+    statement1.add_transaction(account1.deposit(200, '17/04/2023'))
+    statement1.add_transaction(account1.deposit(400, '19/04/2023'))
+    statement1.add_transaction(account1.withdraw(300, '21/04/2023'))
+    expect(statement1.view_statement).to eq "Paul Lazar\ndate || credit || debit || balance\n17/04/2023 || 200.00 || || 200.00\n19/04/2023 || 400.00 || || 600.00\n21/04/2023 || || 300.00 || 300.00\n"
+  end
 end
