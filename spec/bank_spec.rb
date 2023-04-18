@@ -29,19 +29,19 @@ RSpec.describe Bank do
   end
 
   it 'Returns error if depositing a negative value.' do
-    expect{ @account1.deposit(-1000, '18/04/2023') }.to raise_error 'You cannot deposit negative values.'
+    expect { @account1.deposit(-1000, '18/04/2023') }.to raise_error 'You cannot deposit negative values.'
   end
 
   it 'Returns error if depositing a zero value.' do
-    expect{ @account1.deposit(0, '18/04/2023') }.to raise_error 'You cannot deposit negative values.'
+    expect { @account1.deposit(0, '18/04/2023') }.to raise_error 'You cannot deposit negative values.'
   end
 
   it 'Returns error if amount deposited is not a number.' do
-    expect{ @account1.deposit('aaaaa', '18/04/2023') }.to raise_error 'The deposit amount must not be a string.'
+    expect { @account1.deposit('aaaaa', '18/04/2023') }.to raise_error 'The deposit amount must not be a string.'
   end
 
   it 'Returns error if amount deposited is a number inserted as text.' do
-    expect{ @account1.deposit('1', '18/04/2023') }.to raise_error 'The deposit amount must not be a string.'
+    expect { @account1.deposit('1', '18/04/2023') }.to raise_error 'The deposit amount must not be a string.'
   end
 
   it 'Withdraws 100 monetary units and returns updated balance.' do

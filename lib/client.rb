@@ -7,6 +7,6 @@ class Client
   end
 
   def view_client
-    return "#{@first_name.capitalize()} #{@last_name.capitalize()}"
+    "#{@first_name.capitalize()} #{@last_name.capitalize()}"
   end
 end

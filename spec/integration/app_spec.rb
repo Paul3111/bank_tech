@@ -73,6 +73,6 @@ RSpec.describe 'Statement integration.' do
     @statement1.add_client_to_statement(@client1)
     @statement1.add_transaction(@account1.deposit(200, '17/04/2023'))
     @statement1.add_transaction(@account1.deposit(400, '19/04/2023'))
-    expect{ @statement1.add_transaction(@account1.withdraw(900, '21/04/2023')) }.to raise_error 'You cannot withdraw an amount greater than the available balance.'
+    expect { @statement1.add_transaction(@account1.withdraw(900, '21/04/2023')) }.to raise_error 'You cannot withdraw an amount greater than the available balance.'
   end
 end
