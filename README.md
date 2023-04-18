@@ -18,20 +18,28 @@
    10/01/2023 || 1000.00 || || 1000.00
 
 3. How to run the app
-   a. If Ruby is not already installed:
+   a. Clone the repository
+
+   git clone https://github.com/Paul3111/bank_tech
+
+   b. If Ruby is not already installed:
 
    rvm get stable
    rvm use ruby --latest --install --default
 
-   b. Install bundler and rspec
+   c. Install bundler
 
    gem install bundler
    bundle init
-   bundle add rspec
+   bundle install
    rspec --init
 
-   c. Run Rspec with the following command
+   d. Run Rspec with the following command
    rspec
+
+   e. Check the tests coverage by using the following command
+
+   open coverage/index.html
 
 4. Dependencies
    - rvm
