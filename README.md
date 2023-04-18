@@ -44,5 +44,5 @@
 ![Coverage at 18/04/2023](./coverage/coverage_example.png)
 
 4. Dependencies
-   - rvm
-   - bundler
+   - rspec
+   - simplecov
