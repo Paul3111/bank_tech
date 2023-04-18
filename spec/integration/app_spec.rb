@@ -5,8 +5,9 @@ RSpec.describe Statement do
     client1 = Client.new('Paul', 'Lazar')
     account1 = Bank.new
     statement1 = Statement.new
+    statement1.add_client_to_statement(client1)
     statement1.add_transaction(account1.deposit(100, '17/04/2023'))
-    expect(statement1.view_statement).to eq 'date || credit || debit || balance\n17/04/2023 || 100.00 || || 100.00'
+    expect(statement1.view_statement).to eq "Paul Lazar\ndate || credit || debit || balance\n17/04/2023 || 100.00 || || 100.00"
   end
   
   it 'Prints the statement header.' do
@@ -18,9 +19,9 @@ RSpec.describe Statement do
     client1 = Client.new('Paul', 'Lazar')
     account1 = Bank.new
     statement1 = Statement.new
+    statement1.add_client_to_statement(client1)
     statement1.add_transaction(account1.deposit(100, '17/04/2023'))
-    expect(account1.balance).to eq 100
-    expect(client1.view_client).to eq 'Paul Lazar'
-    expect(statement1.view_statement).to eq ''
+    statement1.add_transaction(account1.deposit(400, '18/04/2023'))
+    expect(statement1.view_statement).to eq "Paul Lazar\ndate || credit || debit || balance\n17/04/2023 || 100.00 || || 100.00\n18/04/2023 || 100.00 || || 500.00"
   end
 end
