@@ -41,6 +41,8 @@
 
    open coverage/index.html
 
+![Coverage at 18/04/2023](./coverage/Tests%20coverage%20at%2020.24.30.png)
+
 4. Dependencies
    - rvm
    - bundler
