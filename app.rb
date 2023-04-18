@@ -6,7 +6,11 @@ class Statement
   end
 
   def add_transaction(transaction)
-    @balance += transaction['amount']
+    if transaction['type'] == 'credit'
+        @balance += transaction['amount']
+    else
+        @balance -= transaction['amount']
+    end
     return @transactions << transaction
   end
 
@@ -14,14 +18,14 @@ class Statement
     return @client = client
   end
 
-  #def fetch_balance(balance)
-  #  return @balance
-  #end
-
   def view_statement
     transactions_list = []
     @transactions.each do |transaction|
-      transactions_list << "#{transaction["date"]} || #{sprintf('%.2f', transaction["amount"])} || || #{sprintf('%.2f', transaction['balance'])}\n"
+      if transaction['type'] == 'credit'
+        transactions_list << "#{transaction["date"]} || #{sprintf('%.2f', transaction["amount"])} || || #{sprintf('%.2f', transaction['balance'])}\n"
+      else
+        transactions_list << "#{transaction["date"]} || || #{sprintf('%.2f', transaction["amount"])} || #{sprintf('%.2f', transaction['balance'])}\n"
+      end
     end
     return "#{@client.view_client}\n#{statement_header}\n#{transactions_list.join()}"
   end
