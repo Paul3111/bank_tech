@@ -21,7 +21,7 @@ class Statement
   def view_statement
     transactions_list = []
     @transactions.each do |transaction|
-      transactions_list << "#{transaction["date"]} || #{sprintf('%.2f', transaction["amount"])} || || #{sprintf('%.2f', @balance)}\n"
+      transactions_list << "#{transaction["date"]} || #{sprintf('%.2f', transaction["amount"])} || || #{sprintf('%.2f', transaction['balance'])}\n"
     end
     return "#{@client.view_client}\n#{statement_header}\n#{transactions_list.join()}"
   end

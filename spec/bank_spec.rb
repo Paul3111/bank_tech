@@ -10,21 +10,21 @@ RSpec.describe Bank do
   it 'Deposits 1 monetary unit and returns the deposit amount and date.' do
     account1 = Bank.new
     transaction1 = account1.deposit(1, '17/04/2023')
-    expect(transaction1).to eq ({'amount'=> 1, 'date'=> '17/04/2023'})
+    expect(transaction1).to eq ({'amount'=> 1, 'date'=> '17/04/2023', 'balance'=> 1})
   end
 
   it 'Deposits 1000 monetary units and returns the deposit amount and date.' do
     account1 = Bank.new
     transaction1 = account1.deposit(1000, '18/04/2023')
-    expect(transaction1).to eq ({'amount'=> 1000, 'date'=> '18/04/2023'})
+    expect(transaction1).to eq ({'amount'=> 1000, 'date'=> '18/04/2023', 'balance'=> 1000})
   end
 
   it 'Deposits 50 and 1000 monetary units and returns the deposit amount and dates.' do
     account1 = Bank.new
     transaction1 = account1.deposit(50, '17/04/2023')
-    expect(transaction1).to eq ({'amount'=> 50, 'date'=> '17/04/2023'})
+    expect(transaction1).to eq ({'amount'=> 50, 'date'=> '17/04/2023', 'balance'=> 50})
     transaction2 = account1.deposit(1000, '18/04/2023')
-    expect(transaction2).to eq ({'amount'=> 1000, 'date'=> '18/04/2023'})
+    expect(transaction2).to eq ({'amount'=> 1000, 'date'=> '18/04/2023', 'balance'=> 1050})
   end
 
   it 'Returns error if depositing a negative value.' do
