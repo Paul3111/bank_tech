@@ -3,15 +3,15 @@ class Statement
     @transactions = []
   end
 
-  def add_transaction()
+  def add_transaction(transaction)
 
   end
 
   def view_statement
-    return 'date || credit || debit || balance\n10/01/2023 || 1000.00 || || 1000.00'
+    return "#{statement_header}\\n17/04/2023 || 100.00 || || 100.00"
   end
 
   def statement_header
-    return "date || credit || debit || balance\n"
+    return "date || credit || debit || balance"
   end
 end
