@@ -41,7 +41,7 @@
 
    open coverage/index.html
 
-![Coverage at 18/04/2023](./coverage/Tests%20coverage%20at%2020.24.30.png)
+![Coverage at 18/04/2023](./coverage/coverage_example.png)
 
 4. Dependencies
    - rvm
