@@ -23,7 +23,7 @@ class Statement
 
   def view_statement
     list = []
-    @transactions.each do |item|
+    @transactions.reverse_each do |item|
       if item['type'] == 'credit'
         list << format("%<date>s || %<amount>.2f || || %<balance>.2f\n", date: item['date'], amount: item['amount'], balance: item['balance'])
       else

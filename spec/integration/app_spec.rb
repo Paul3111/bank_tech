@@ -32,7 +32,7 @@ RSpec.describe 'Statement integration.' do
     @statement1.add_transaction(@account1.deposit(100, '17/04/2023'))
     @statement1.add_transaction(@account1.deposit(400, '18/04/2023'))
     @statement1.add_transaction(@account1.deposit(500, '19/04/2023'))
-    expect(@statement1.view_statement).to include "balance\n17/04/2023 || 100.00"
+    expect(@statement1.view_statement).to include "balance\n19/04/2023 || 500.00"
   end
 
   it 'Deposits and withdraws 100 monetary units and returns the transaction history.' do

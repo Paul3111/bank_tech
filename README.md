@@ -56,6 +56,11 @@
 ![Coverage at 18/04/2023](./coverage/coverage_example.png)
 
 5. Dependencies (required for running the tests)
+
    - rspec
    - simplecov
    - rubocop
+
+6. Example of how the app runs in irb:
+
+![Example run](./coverage/example_run.png)
