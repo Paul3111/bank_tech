@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require './lib/bank'
 
 RSpec.describe Bank do
-  
   before(:each) do
     @account1 = Bank.new
   end
@@ -13,19 +14,19 @@ RSpec.describe Bank do
 
   it 'Deposits 1 monetary unit and returns the deposit amount and date.' do
     transaction1 = @account1.deposit(1, '17/04/2023')
-    expect(transaction1).to eq ({'amount'=> 1, 'date'=> '17/04/2023', 'balance'=> 1, "type"=>"credit"})
+    expect(transaction1).to eq({ 'amount' => 1, 'date' => '17/04/2023', 'balance' => 1, 'type' => 'credit' })
   end
 
   it 'Deposits 1000 monetary units and returns the deposit amount and date.' do
     transaction1 = @account1.deposit(1000, '18/04/2023')
-    expect(transaction1).to eq ({'amount'=> 1000, 'date'=> '18/04/2023', 'balance'=> 1000, "type"=>"credit"})
+    expect(transaction1).to eq({ 'amount' => 1000, 'date' => '18/04/2023', 'balance' => 1000, 'type' => 'credit' })
   end
 
   it 'Deposits 50 and 1000 monetary units and returns the deposit amount and dates.' do
     transaction1 = @account1.deposit(50, '17/04/2023')
-    expect(transaction1).to eq ({'amount'=> 50, 'date'=> '17/04/2023', 'balance'=> 50, "type"=>"credit"})
+    expect(transaction1).to eq({ 'amount' => 50, 'date' => '17/04/2023', 'balance' => 50, 'type' => 'credit' })
     transaction2 = @account1.deposit(1000, '18/04/2023')
-    expect(transaction2).to eq ({'amount'=> 1000, 'date'=> '18/04/2023', 'balance'=> 1050, "type"=>"credit"})
+    expect(transaction2).to eq({ 'amount' => 1000, 'date' => '18/04/2023', 'balance' => 1050, 'type' => 'credit' })
   end
 
   it 'Returns error if depositing a negative value.' do

@@ -22,15 +22,15 @@ class Statement
   end
 
   def view_statement
-    transactions_list = []
-    @transactions.each do |transaction|
-      if transaction['type'] == 'credit'
-        transactions_list << "#{transaction['date']} || #{sprintf('%.2f', transaction['amount'])} || || #{sprintf('%.2f', transaction['balance'])}\n"
+    list = []
+    @transactions.each do |item|
+      if item['type'] == 'credit'
+        list << format("%<date>s || %<amount>.2f || || %<balance>.2f\n", date: item['date'], amount: item['amount'], balance: item['balance'])
       else
-        transactions_list << "#{transaction['date']} || || #{sprintf('%.2f', transaction['amount'])} || #{sprintf('%.2f', transaction['balance'])}\n"
+        list << format("%<date>s || || %<amount>.2f || %<balance>.2f\n", date: item['date'], amount: item['amount'], balance: item['balance'])
       end
     end
-    return "#{@client.view_client}\n#{statement_header}\n#{transactions_list.join()}"
+    "#{@client.view_client}\n#{statement_header}\n#{list.join}"
   end
 
   def statement_header

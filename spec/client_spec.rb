@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/client'
 
 RSpec.describe Client do

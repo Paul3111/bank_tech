@@ -3,10 +3,11 @@
     "coverage": {
       "/Users/paullazar/Desktop/MakersCourse/bank_tech/spec/bank_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           1,
           12,
           null,
@@ -77,9 +78,14 @@
       },
       "/Users/paullazar/Desktop/MakersCourse/bank_tech/lib/bank.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
+          null,
+          null,
+          1,
+          1,
+          null,
           1,
           22,
           null,
@@ -87,24 +93,25 @@
           1,
           29,
           27,
+          null,
           24,
+          null,
           24,
           null,
           null,
           1,
           8,
+          null,
           6,
           6,
-          null,
-          null,
-          1,
-          4,
           null,
           null
         ]
       },
       "/Users/paullazar/Desktop/MakersCourse/bank_tech/spec/client_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -156,10 +163,14 @@
       },
       "/Users/paullazar/Desktop/MakersCourse/bank_tech/lib/client.rb": {
         "lines": [
+          null,
+          null,
+          null,
           1,
           1,
           21,
           18,
+          null,
           15,
           15,
           null,
@@ -172,10 +183,11 @@
       },
       "/Users/paullazar/Desktop/MakersCourse/bank_tech/spec/integration/app_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           1,
           10,
           10,
@@ -248,6 +260,7 @@
           1,
           1,
           2,
+          null,
           null,
           null
         ]
@@ -296,6 +309,6 @@
         ]
       }
     },
-    "timestamp": 1681847341
+    "timestamp": 1681914201
   }
 }

@@ -44,8 +44,10 @@
    bundle install
    rspec --init
 
-   d. Run Rspec with the following command
+   d. Run Rspec and Rubocop with the following commands
+
    rspec
+   bundle exec rubocop
 
    e. Check the tests coverage by using the following command
 
